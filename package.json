@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dschewchenko/ssnappy.git"
+    "url": "git+https://github.com/dschewchenko/just-check.git"
   },
   "keywords": [
     "dependencies",
@@ -37,9 +37,9 @@
   "author": "dschewchenko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dschewchenko/ssnappy/issues"
+    "url": "https://github.com/dschewchenko/just-check/issues"
   },
-  "homepage": "https://github.com/dschewchenko/ssnappy#readme",
+  "homepage": "https://github.com/dschewchenko/just-check#readme",
   "engines": {
     "node": ">=14.0.0"
   },
