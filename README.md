@@ -6,13 +6,14 @@ This package helps you to identify missing packages and packages with incorrect 
 
 ## Installation
 
-You can install this package as a global package or as a local dependency in your project:
-    
+You can install this package as a global package or as a local dependency in your project.
+
+globally:
 ```bash
 npm install just-check -g
 ```
 
-or
+or locally:
 
 ```bash
 npm install just-check -D
