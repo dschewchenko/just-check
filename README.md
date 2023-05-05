@@ -1,6 +1,6 @@
 # just-check
 
-Check installed dependencies and their versions in your Node.js project.
+Check installed dependencies and their versions in your Node.js project. Will exit with code 1 if any problems are found, otherwise will exit with code 0.
 
 This package helps you to identify missing packages and packages with incorrect versions specified in your `package.json`. It also provides an option to automatically install missing packages.
 
