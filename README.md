@@ -24,10 +24,10 @@ npm install just-check -D
 To use this package as a CLI, run the following command:
 
 ```bash
-just-check [--install[="your-install-command"]]
+just-check [--install[="your-install-command"]] [--skip-dev]
 ```
 
-If you installed the package locally, you can add it to your `package.json` scripts, like this:
+If you installed the package, you can add it to your `package.json` scripts, like this:
 
 ```json
 "scripts": {
@@ -46,6 +46,8 @@ or before starting your project:
 ## Options
 
 `--install[="your-install-command"]` If this flag is provided, the script will attempt to install missing dependencies using the specified command. If no command is provided, it will default to `npm install`. If you want to use `yarn`, you can specify it like this: `--install="yarn add"`.
+
+`--skip-dev` If this flag is provided, the script will not check for missing dev dependencies.
 
 ## Example output
 
