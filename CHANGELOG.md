@@ -1,3 +1,10 @@
+# 1.0.0 (2023-05-05)
+
+
+### Features
+
+* add check for dev dependencies and flag to skip them ([7ab082f](https://github.com/dschewchenko/just-check/commit/7ab082fd4b5ee7ede23ae963920e99c472de3b74))
+
 # 1.0.0 (2023-05-04)
 
 
