@@ -5,11 +5,20 @@ const path = require('path');
 const semver = require('semver');
 const { spawn } = require('child_process');
 
-function checkInstalledDependencies(installCommand) {
+/**
+ * Checks if all dependencies are installed and if they satisfy the version requirements.
+ *
+ * @param installCommand - the command to run to install missing dependencies
+ * @param checkDevDependencies - whether to check devDependencies as well as dependencies
+ */
+function checkInstalledDependencies(installCommand, checkDevDependencies ) {
   const projectPath = path.resolve('.');
   const packageJson = require(path.join(projectPath, 'package.json'));
 
   const dependencies = packageJson.dependencies;
+  if (checkDevDependencies) {
+    Object.assign(dependencies, packageJson.devDependencies);
+  }
   const missingDependencies = [];
 
   // check each dependency to see if it is installed and if it satisfies the version requirement
@@ -74,5 +83,8 @@ const installArgIndex = process.argv.findIndex((arg) => arg.startsWith('--instal
 // if the --install argument is present, get the command from it, otherwise use the default
 const installCommand = installArgIndex !== -1 ? process.argv[installArgIndex].split('=')[1] ?? "npm install" : null;
 
+// get the --skip-dev argument from the command line arguments
+const checkDevDependencies = !process.argv.includes('--skip-dev');
+
 // run the check
-checkInstalledDependencies(installCommand);
+checkInstalledDependencies(installCommand, checkDevDependencies);
