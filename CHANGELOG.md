@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dschewchenko/just-check/compare/v1.0.0...v1.1.0) (2023-05-05)
+
+
+### Features
+
+* add check for dev dependencies and flag to skip them ([b87b966](https://github.com/dschewchenko/just-check/commit/b87b9668ed0af88051c5f04d633b9d9ee3f916fb))
+
 # 1.0.0 (2023-05-04)
 
 ### First release!
