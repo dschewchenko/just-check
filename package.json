@@ -1,6 +1,6 @@
 {
   "name": "just-check",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Simple check for installed packages with versions correspond to those specified in the package.json",
   "type": "module",
   "scripts": {
