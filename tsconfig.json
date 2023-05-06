@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "module": "NodeNext",
+    "target": "ES2021",
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
