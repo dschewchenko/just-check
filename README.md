@@ -21,10 +21,12 @@ npm install just-check -D
 
 ## Usage
 
+### CLI
+
 To use this package as a CLI, run the following command:
 
 ```bash
-just-check [--install[="your-install-command"]] [--skip-dev]
+just-check [--install[="your-install-command"]] [--skip-dev] [--path="your-project-path"]
 ```
 
 If you installed the package, you can add it to your `package.json` scripts, like this:
@@ -43,16 +45,42 @@ or before starting your project:
 }
 ```
 
+### API (ESM only)
+
+To use this package as an API, you can import it like this:
+
+```js
+import { justCheck } from "just-check";
+
+try {
+  const missingDeps = justCheck({
+    install: "npm install", // command to install missing dependencies, defaults to not installing
+    skipDev: true, // skip dev dependencies, defaults to false
+    path: "." // path to project root, defaults to process.cwd()
+  });
+  
+  if (missingDeps) {
+    console.error("Missing dependencies found!");
+    process.exit(1);
+  }
+} catch (error) {
+  console.error(error);
+}
+```
+
 ## Options
 
-`--install[="your-install-command"]` If this flag is provided, the script will attempt to install missing dependencies using the specified command. If no command is provided, it will default to `npm install`. If you want to use `yarn`, you can specify it like this: `--install="yarn add"`.
+- `--install[="your-install-command"]` If this flag is provided, the script will attempt to install missing dependencies using the specified command. If no command is provided, it will default to `npm install`. If you want to use `yarn`, you can specify it like this: `--install="yarn add"`.
 
-`--skip-dev` If this flag is provided, the script will not check for missing dev dependencies.
+- `--skip-dev` If this flag is provided, the script will not check for missing dev dependencies.
+
+- `--path="your-project-path"` If this flag is provided, the script will check for missing dependencies in the specified path. If no path is provided, it will default to `process.cwd()`.
 
 ## Example output
 
 ```bash
 $ just-check
+Checking dependencies in .../some-project
 Problematic dependencies:
 - package1 (installed: 0.9.0, should be 1.0.0)
 - package2 (installed: 2.0.5, should be 2.1.0)
