@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/dschewchenko/just-check/compare/v1.2.0...v1.2.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* update document and changelog ([11032b4](https://github.com/dschewchenko/just-check/commit/11032b4d70c168b6620d249c422ef254d102891a))
+
 # [1.2.0](https://github.com/dschewchenko/just-check/compare/v1.1.1...v1.2.0) (2023-05-06)
 
 
