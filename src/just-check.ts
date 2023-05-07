@@ -10,7 +10,7 @@ export type Options = {
    *
    * @default null. If null, no installation will be performed, only a check. If a string, the string will be run as a command, for example "npm install".
    */
-  install?: string,
+  install?: string | null,
   /**
    * Whether to check devDependencies as well as dependencies.
    *

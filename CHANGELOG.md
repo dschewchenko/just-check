@@ -3,7 +3,7 @@
 
 ### Features
 
-* add ts and api usage ([b98b800](https://github.com/dschewchenko/just-check/commit/b98b800d4dc70b81689a7ab638fce1dcc443d9e7))
+* add TypeScript support and usage as dependency ([b98b800](https://github.com/dschewchenko/just-check/commit/b98b800d4dc70b81689a7ab638fce1dcc443d9e7))
 
 ## [1.1.1](https://github.com/dschewchenko/just-check/compare/v1.1.0...v1.1.1) (2023-05-05)
 

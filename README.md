@@ -47,22 +47,23 @@ or before starting your project:
 
 ### API (ESM only)
 
-To use this package as an API, you can import it like this:
+To use this package as an dependency, you can import it like this:
 
 ```js
 import { justCheck } from "just-check";
 
 try {
   const missingDeps = justCheck({
-    install: "npm install", // command to install missing dependencies, defaults to not installing
-    skipDev: true, // skip dev dependencies, defaults to false
-    path: "." // path to project root, defaults to process.cwd()
+    install: "npm install", // command to install missing dependencies, defaults to `null`(no install)
+    checkDevDependencies: true, // check dev dependencies, defaults to true
+    path: "." // path to project root, defaults to current working directory
   });
   
   if (missingDeps) {
     console.error("Missing dependencies found!");
     process.exit(1);
   }
+  // will throw if package.json is missing or cannot install dependencies
 } catch (error) {
   console.error(error);
 }
@@ -70,11 +71,24 @@ try {
 
 ## Options
 
-- `--install[="your-install-command"]` If this flag is provided, the script will attempt to install missing dependencies using the specified command. If no command is provided, it will default to `npm install`. If you want to use `yarn`, you can specify it like this: `--install="yarn add"`.
+### CLI
+
+- `--install[="your-install-command"]` If this flag is provided, the script will attempt to install missing dependencies using the specified command. If no install command is provided, it will default to `npm install`. If you want to use `yarn`, you can specify it like this: `--install="yarn add"`. By default, will not install missing dependencies.
+
 
 - `--skip-dev` If this flag is provided, the script will not check for missing dev dependencies.
 
+
 - `--path="your-project-path"` If this flag is provided, the script will check for missing dependencies in the specified path. If no path is provided, it will default to `process.cwd()`.
+
+### API
+- `install?: string | null` If this option is provided, the script will attempt to install missing dependencies using the specified command. If you want to use `yarn`, you can specify it like this: `install: "yarn add"`. Defaults to `null` (will not install missing dependencies).
+
+
+- `checkDevDependencies?: boolean` If this option is `false`, the script will not check for missing dev dependencies. Defaults to `true`.
+
+
+- `path?: string` If this option is provided, the script will check for missing dependencies in the specified path. If no path is provided, it will default to current working directory `.`. Directory must contain `package.json` file.
 
 ## Example output
 
