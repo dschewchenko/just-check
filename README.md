@@ -1,7 +1,7 @@
 # just-check
 
-[![npm version](https://img.shields.io/npm/v/vue3-track.svg)](https://www.npmjs.com/package/just-check)
-[![npm downloads](https://img.shields.io/npm/dw/vue3-track)](https://www.npmjs.com/package/just-check)
+[![npm version](https://img.shields.io/npm/v/just-check.svg)](https://www.npmjs.com/package/just-check)
+[![npm downloads](https://img.shields.io/npm/dw/just-check)](https://www.npmjs.com/package/just-check)
 
 Check installed dependencies and their versions in your Node.js project. Will exit with code 1 if any problems are found, otherwise will exit with code 0.
 
